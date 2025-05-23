@@ -34,21 +34,21 @@ public class DataBaseUtility {
 		}
 	}
 	
-							/**
-							 * This method is used to get database connection of TestYantra Projects database
-							 */
-							public void getDbConnectionWithCredentials() {
-								try 
-								{
-									Driver driver = new Driver();
-									DriverManager.registerDriver(driver);
-									connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/projects", "root", "root");
-								} 
-								catch (Exception e) 
-								{
-									
-								}
-							}
+	/**
+	 * This method is used to get database connection of TestYantra Projects database
+	 */
+	public void getDbConnectionWithCredentials() {
+		try 
+		{
+			Driver driver = new Driver();
+			DriverManager.registerDriver(driver);
+			connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/projects", "root", "root");
+		} 
+		catch (Exception e) 
+		{
+			
+		}
+	}
 	
 	/**
 	 * This method is used to close the database connection with java
