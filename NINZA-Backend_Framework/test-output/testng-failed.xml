@@ -5,7 +5,7 @@
     <classes>
       <class name="com.ninza.hrm.api.projecttest.createProject">
         <methods>
-          <include name="addSingleProjectWithCreated"/>
+          <include name="addSingleProject"/>
           <include name="afterSuite"/>
           <include name="beforeSuite"/>
         </methods>

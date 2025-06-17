@@ -34,13 +34,12 @@ public class JsonUtility {
 	}
 	
 	/**
-	 * 
 	 * @param resp
 	 * @param jsonXpath
 	 * @param expData
 	 * @return
 	 */
-	public boolean verifyDataOnJsonPath(Response resp,String jsonXpath,String expData) {
+	public boolean verifyDataOnJsonPath(Response resp,String expData,String jsonXpath ) {
 		List<String> list= JsonPath.read(resp.asString(),jsonXpath);
 		boolean flag = false;
 		for(String str : list) {
