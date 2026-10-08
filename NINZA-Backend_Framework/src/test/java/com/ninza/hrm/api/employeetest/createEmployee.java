@@ -31,7 +31,7 @@ public class createEmployee extends BaseApiClass{
 	@Test
 	public void addEmployee() throws SQLException, IOException {
 
-		String expData = "Employee Added Successfully";
+		String expSucMsg = "Employee Added Successfully";
 		
 		String DB_URL = fUtil.readDataFromPropertyFile("dbUrl");
 		String DB_USERNAME = fUtil.readDataFromPropertyFile("dbUserName");
@@ -44,11 +44,11 @@ public class createEmployee extends BaseApiClass{
 		// API Layer Testing
 		Response resp = given().spec(ReqSpecObj).body(ppObj).when().post(iEndPoints.ADD_EMPLOYEE);
 		
-		resp.then().assertThat().statusCode(201).time(Matchers.lessThan(3000l)).spec(RespSpecObj)
+		resp.then().statusCode(201).time(Matchers.lessThan(3000l)).spec(RespSpecObj)
 		.log().all();
 		
 		String actSucMsg = jsUtil.getDataFromJsonPathUsingKey(resp, "msg");
-		Assert.assertEquals(expData, actSucMsg);
+		Assert.assertEquals(expSucMsg, actSucMsg);
 		
 		// DB Layer Testing
 		dUtil.getDbConnection(DB_URL, DB_USERNAME, DB_PASSWORD);

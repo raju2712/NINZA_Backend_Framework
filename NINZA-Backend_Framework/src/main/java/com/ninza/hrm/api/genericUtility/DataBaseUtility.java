@@ -7,11 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.testng.Reporter;
+
 import com.mysql.cj.jdbc.Driver;
 
 public class DataBaseUtility {
 	
 	Connection connect;
+	
 	
 	/**
 	 * This method is used to get connection of database
@@ -30,7 +33,7 @@ public class DataBaseUtility {
 		} 
 		catch (Exception e) 
 		{
-			
+			Reporter.log("Failed to establish DB connection "+ e.getMessage());
 		}
 	}
 	
@@ -46,7 +49,7 @@ public class DataBaseUtility {
 		} 
 		catch (Exception e) 
 		{
-			
+			Reporter.log("Failed to establish DB connection "+ e.getMessage());
 		}
 	}
 	
@@ -124,6 +127,5 @@ public class DataBaseUtility {
 			return false;
 		}
 	}
-	
 
 }

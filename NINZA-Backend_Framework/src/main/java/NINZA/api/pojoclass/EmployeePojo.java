@@ -13,7 +13,7 @@ public class EmployeePojo {
 	String username;
 	
 	public EmployeePojo(String designation, String dob, String email, String empName,int experience,String mobileNo,String project,String role,String username) {
-		super();
+		//super();
 		this.designation = designation;
 		this.dob = dob;
 		this.email = email;
